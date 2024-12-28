@@ -23,14 +23,14 @@ const MobileMenus = () => {
             {menu.homes ? (
               <li className={`has-dropdown has-mega-menu ${isActiveMenu === menu.title ? 'dropdown-opened':''}`}>
                 <a className={`${isActiveMenu === menu.title ? 'expanded':''}`}>
-                  Home
+                  Нүүр
                   <button onClick={()=> handleOpenSubMenu(menu.title)} className={`dropdown-toggle-btn ${isActiveMenu === menu.title ? 'dropdown-opened':''}`}>
                     <i className="fa-regular fa-angle-right"></i>
                   </button>
                 </a>
                 <div className={`home-menu tp-submenu tp-mega-menu ${isActiveMenu === menu.title ? 'active':''}`}>
                   <div className="row row-cols-1 row-cols-lg-4 row-cols-xl-5">
-                    {menu.home_pages.map((home, i) => (
+                    {menu?.home_pages?.map((home, i) => (
                       <div key={i} className="col">
                         <div className="home-menu-item">
                           <Link href={home.link}>

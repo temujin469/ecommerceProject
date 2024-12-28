@@ -45,10 +45,10 @@ const DetailsTabNav = ({ product }) => {
     <>
       <div className="tp-product-details-tab-nav tp-tab">
         <nav>
-          <div className="nav nav-tabs justify-content-center p-relative tp-product-tab" id="navPresentationTab" role="tablist">
+          <div className="nav nav-tabs p-relative tp-product-tab" id="navPresentationTab" role="tablist">
             <NavItem active={true} linkRef={activeRef} id="desc" title="Тайлбар" />
             <NavItem id="additional" title="Мэдээлэл" />
-            <NavItem id="review" title={`Үнэлгээ (${reviews.length})`} />
+            <NavItem id="review" title={`Үнэлгээ`} />
 
             <span ref={marker} id="productTabMarker" className="tp-product-details-tab-line"></span>
           </div>

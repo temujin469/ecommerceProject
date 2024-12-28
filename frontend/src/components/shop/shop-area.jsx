@@ -6,6 +6,7 @@ import ErrorMsg from "../common/error-msg";
 import ShopFilterOffCanvas from "../common/shop-filter-offcanvas";
 import { useGetAllProductsQuery } from "@/redux/features/productApi";
 import ShopContent from "./shop-content";
+import MobileNav from "../common/mobile-navbar";
 
 const ShopArea = ({shop_right=false,hidden_sidebar=false}) => {
   const searchParams = useSearchParams();
@@ -200,6 +201,7 @@ const ShopArea = ({shop_right=false,hidden_sidebar=false}) => {
   return (
     <>
       {content}
+      <MobileNav/>
     </>
   );
 };

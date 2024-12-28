@@ -1,5 +1,5 @@
-'use client';
-import React, { useState } from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";
@@ -15,7 +15,15 @@ import HeaderTopRight from "./header-com/header-top-right";
 import HeaderMainRight from "./header-com/header-main-right";
 import CartMiniSidebar from "@/components/common/cart-mini-sidebar";
 import HeaderSearchForm from "@/components/forms/header-search-form";
-import { CartTwo, CategoryMenu, Compare, Menu, Phone, ShippingCar, Wishlist } from "@/svg";
+import {
+  CartTwo,
+  CategoryMenu,
+  Compare,
+  Menu,
+  Phone,
+  ShippingCar,
+  Wishlist,
+} from "@/svg";
 
 const Header = () => {
   const { wishlist } = useSelector((state) => state.wishlist);
@@ -24,6 +32,32 @@ const Header = () => {
   const { quantity } = useCartInfo();
   const { sticky } = useSticky();
   const dispatch = useDispatch();
+
+  const [show, setShow] = useState(true); // To control the visibility of the div
+  const [lastScroll, setLastScroll] = useState(0); // To store the last scroll position
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScroll = window.scrollY;
+
+      if (currentScroll > lastScroll && currentScroll > 0) {
+        // Scrolling down
+        setShow(false);
+      } else {
+        // Scrolling up
+        setShow(true);
+      }
+
+      setLastScroll(currentScroll);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [lastScroll]);
+
   return (
     <>
       <header>
@@ -90,7 +124,10 @@ const Header = () => {
                         Бүх ангилал
                       </button>
                       <nav className="tp-category-menu-content">
-                        <HeaderCategory categoryType="" isCategoryActive={isCategoryActive} />
+                        <HeaderCategory
+                          categoryType=""
+                          isCategoryActive={isCategoryActive}
+                        />
                       </nav>
                     </div>
                     {/* category end */}
@@ -125,7 +162,10 @@ const Header = () => {
       </header>
 
       {/* sticky header start */}
-      <div id="header-sticky-2" className={`tp-header-sticky-area ${sticky ? 'header-sticky-2' : ''}`}>
+      <div
+        id="header-sticky-2"
+        className={`tp-header-sticky-area ${sticky ? "header-sticky-2" : ""}`}
+      >
         <div className="container">
           <div className="tp-mega-menu-wrapper p-relative">
             <div className="row align-items-center">
@@ -153,17 +193,27 @@ const Header = () => {
                   <div className="tp-header-action-item d-none d-lg-block">
                     <Link href="/wishlist" className="tp-header-action-btn">
                       <Wishlist />
-                      <span className="tp-header-action-badge">{wishlist.length}</span>
+                      <span className="tp-header-action-badge">
+                        {wishlist.length}
+                      </span>
                     </Link>
                   </div>
                   <div className="tp-header-action-item">
-                    <button onClick={() => dispatch(openCartMini())} type="button" className="tp-header-action-btn cartmini-open-btn">
+                    <button
+                      onClick={() => dispatch(openCartMini())}
+                      type="button"
+                      className="tp-header-action-btn cartmini-open-btn"
+                    >
                       <CartTwo />
                       <span className="tp-header-action-badge">{quantity}</span>
                     </button>
                   </div>
                   <div className="tp-header-action-item d-lg-none">
-                    <button onClick={() => setIsCanvasOpen(true)} type="button" className="tp-header-action-btn tp-offcanvas-open-btn">
+                    <button
+                      onClick={() => setIsCanvasOpen(true)}
+                      type="button"
+                      className="tp-header-action-btn tp-offcanvas-open-btn"
+                    >
                       <Menu />
                     </button>
                   </div>
@@ -180,7 +230,11 @@ const Header = () => {
       {/* cart mini sidebar end */}
 
       {/* off canvas start */}
-      <OffCanvas isOffCanvasOpen={isOffCanvasOpen} setIsCanvasOpen={setIsCanvasOpen} categoryType="electronics" />
+      <OffCanvas
+        isOffCanvasOpen={isOffCanvasOpen}
+        setIsCanvasOpen={setIsCanvasOpen}
+        categoryType="electronics"
+      />
       {/* off canvas end */}
     </>
   );

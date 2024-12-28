@@ -3,6 +3,7 @@ import React from 'react';
 import Link from 'next/link';
 import { useSelector } from 'react-redux';
 import WishlistItem from './wishlist-item';
+import MobileNav from '../common/mobile-navbar';
 
 const WishlistArea = () => {
   const { wishlist } = useSelector((state) => state.wishlist);
@@ -51,6 +52,7 @@ const WishlistArea = () => {
           }
         </div>
       </section>
+      <MobileNav/>
     </>
   );
 };

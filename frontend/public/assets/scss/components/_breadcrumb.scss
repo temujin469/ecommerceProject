@@ -26,6 +26,10 @@
             margin-bottom: 12px;
         }
     }
+    &__area {
+        background-color: #f3f3f3;
+        margin-bottom: 15px;
+    }
     &__list{
         & span{
             font-weight: 400;
@@ -94,6 +98,8 @@
             }
         }
     }
+
+    
     &__style-3{
         & #{$self}{
             &__title{

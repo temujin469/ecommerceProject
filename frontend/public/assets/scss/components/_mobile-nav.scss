@@ -1,0 +1,63 @@
+@use '../utils' as *;
+
+.mobile-nav {
+  background-color: rgba(248, 250, 252, 0.5); /* Equivalent to bg-gray-50/50 */
+  border: 1px solid rgba(203, 213, 224); /* Equivalent to border-gray-300 */
+  backdrop-filter: blur(9px); /* Equivalent to backdrop-blur-md */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Equivalent to drop-shadow-lg */
+  position: fixed;
+  bottom: 12px;
+  left:12px;
+  right: 12px;
+  z-index: 50;
+  height: 60px;
+  border-radius: 60px;
+  transition: transform 0.3s ease-in-out;
+  display: none;
+
+  @media #{$xs}{
+    display: block;
+  }
+}
+
+.navbar-scroll-show {
+  transform: translateY(0);
+}
+
+.navbar-scroll-hide {
+  transform: translateY(75px);
+}
+
+.mobile-nav-items {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  padding:0 10px;
+  list-style-type: none;
+  margin: 0;
+  color: black; /* Equivalent to text-black */
+
+  button {
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+    &.active {
+      color:$white;
+      background-color:$theme-primary;
+      
+    }
+    // &.inactive {
+
+    // }
+  }
+  }
+
+.navbar-button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+

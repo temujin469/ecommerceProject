@@ -7,6 +7,7 @@ import { clearCart } from '@/redux/features/cartSlice';
 import CartCheckout from './cart-checkout';
 import CartItem from './cart-item';
 import RenderCartProgress from '../common/render-cart-progress';
+import MobileNav from '../common/mobile-navbar';
 
 const CartArea = () => {
   const { cart_products } = useSelector((state) => state.cart);
@@ -74,6 +75,7 @@ const CartArea = () => {
           }
         </div>
       </section>
+      <MobileNav/>
     </>
   );
 };

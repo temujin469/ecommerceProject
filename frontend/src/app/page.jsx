@@ -14,6 +14,7 @@ import ProductBanner from "@/components/products/electronics/product-banner";
 import ProductGadgetArea from "@/components/products/electronics/product-gadget-area";
 import ProductSmArea from "@/components/products/electronics/product-sm-area";
 import Footer from "@/layout/footers/footer";
+import MobileNav from "@/components/common/mobile-navbar";
 
 
 export default function HomePage() {
@@ -34,6 +35,7 @@ export default function HomePage() {
       <InstagramArea/>
       <CtaArea/>
       <Footer/>
+      <MobileNav/>
     </Wrapper>
   )
 }

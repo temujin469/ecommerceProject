@@ -126,36 +126,38 @@ export default menu_data;
 export const mobile_menu = [
   {
     id: 1,
-    homes: true,
-    title: "Home",
+    homes: false,
+    title: "Нүүр",
+    single_link:true,
     link: "/",
-    home_pages: [
-      {
-        img: home_1,
-        title: "Electronics",
-        link: "/",
-      },
-      {
-        img: home_2,
-        title: "Fashion",
-        link: "/home-2",
-      },
-      {
-        img: home_3,
-        title: "Beauty",
-        link: "/home-3",
-      },
-      {
-        img: home_4,
-        title: "Jewelry",
-        link: "/home-4",
-      },
-    ],
+    // home_pages: [
+    //   {
+    //     img: home_1,
+    //     title: "Electronics",
+    //     link: "/",
+    //   },
+    //   {
+    //     img: home_2,
+    //     title: "Fashion",
+    //     link: "/home-2",
+    //   },
+    //   {
+    //     img: home_3,
+    //     title: "Beauty",
+    //     link: "/home-3",
+    //   },
+    //   {
+    //     img: home_4,
+    //     title: "Jewelry",
+    //     link: "/home-4",
+    //   },
+    // ],
   },
   {
     id: 2,
-    sub_menu: true,
-    title: "Products",
+    sub_menu: false,
+    single_link:true,
+    title: "Дэлгүүр",
     link: "/shop",
     sub_menus: [
       { title: "Shop", link: "/shop" },
@@ -170,8 +172,9 @@ export const mobile_menu = [
   },
   {
     id: 3,
-    sub_menu: true,
-    title: "eCommerce",
+    sub_menu: false,
+    single_link:true,
+    title: "Сагс",
     link: "/cart",
     sub_menus: [
       { title: "Shopping Cart", link: "/cart" },
@@ -181,41 +184,17 @@ export const mobile_menu = [
       { title: "My account", link: "/profile" },
     ],
   },
-  {
-    id: 4,
-    sub_menu: true,
-    title: "More Pages",
-    link: "/login",
-    sub_menus: [
-      { title: "Login", link: "/login" },
-      { title: "Register", link: "/register" },
-      { title: "Forgot Password", link: "/forgot" },
-      { title: "404 Error", link: "/404" },
-    ],
-  },
-  {
-    id: 4,
-    single_link: true,
-    title: "Coupons",
-    link: "/coupon",
-  },
-  {
-    id: 5,
-    sub_menu: true,
-    title: "Blog",
-    link: "/blog",
-    sub_menus: [
-      { title: "Blog Standard", link: "/blog" },
-      { title: "Blog Grid", link: "/blog-grid" },
-      { title: "Blog List", link: "/blog-list" },
-      { title: "Blog Details", link: "/blog-details" },
-      { title: "Blog Details Full Width", link: "/blog-details-2" },
-    ],
-  },
-  {
+   {
     id: 6,
     single_link: true,
-    title: "Contact",
-    link: "/contact",
+    title: "Хүслийн жагсаалт",
+    link: "/wishlist",
   },
+  {
+    id: 4,
+    single_link: true,
+    title: "Купон",
+    link: "/coupon",
+  },
+ 
 ];

@@ -20,8 +20,9 @@
 	@extend %tp-transition-common;
 
 	@media #{$xs}{
-		right: 20px;
-		bottom: 20px;
+		// right: 20px;
+		// bottom: 20px;
+		display: none;
 	}
 	&.back-to-top-btn-show{
 		visibility: visible;

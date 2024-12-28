@@ -11,7 +11,7 @@
         position: fixed;
         right: 0;
         top: 0;
-        width: 380px;
+        width: 300px;
         height: 100%;
         @include transform(translateX(calc(100% + 80px)));
         background: var(--tp-common-white) none repeat scroll 0 0;
