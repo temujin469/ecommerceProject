@@ -49,8 +49,11 @@ const allowedDomains = process.env.ALLOWED_DOMAINS.split(',');
 
 
 // middleware
-// app.use(handler)
-app.use(cors(allowedDomains));
+app.use(app.use(
+  cors({
+    origin: "*",
+  })
+));
 app.use(express.json());
 app.use(morgan('dev'));
 app.use(express.static(path.join(__dirname, 'public')));
