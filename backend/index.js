@@ -30,7 +30,7 @@ const allowedDomains = process.env.ALLOWED_DOMAINS.split(',');
 const handler =(req, res) => {
 
   const origin = req.headers.origin;
-  if (allowedOrigins.includes(origin)) {
+  if (allowedDomains.includes(origin)) {
     res.setHeader('Access-Control-Allow-Origin', origin);
   } else {
     res.setHeader('Access-Control-Allow-Origin', 'null'); // Block other origins
