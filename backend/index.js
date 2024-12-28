@@ -49,9 +49,7 @@ const cloudinaryRoutes = require("./routes/cloudinary.routes");
 
 // middleware
 app.use(
-  cors({
-    origin: "*",
-  })
+  cors()
 );
 
 app.use(express.json());
@@ -94,5 +92,7 @@ app.use((req, res, next) => {
   });
   next();
 });
+
+
 
 module.exports = app;
