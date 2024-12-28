@@ -27,29 +27,29 @@ const allowedDomains = process.env.ALLOWED_DOMAINS.split(',');
 
 // console.log(allowedDomains)
 
-const handler =(req, res) => {
+// const handler =(req, res) => {
 
-  const origin = req.headers.origin;
-  if (allowedDomains.includes(origin)) {
-    res.setHeader('Access-Control-Allow-Origin', origin);
-  } else {
-    res.setHeader('Access-Control-Allow-Origin', 'null'); // Block other origins
-  }
+//   const origin = req.headers.origin;
+//   if (allowedDomains.includes(origin)) {
+//     res.setHeader('Access-Control-Allow-Origin', origin);
+//   } else {
+//     res.setHeader('Access-Control-Allow-Origin', 'null'); // Block other origins
+//   }
 
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+//   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+//   res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
 
-  if (req.method === 'OPTIONS') {
-    res.status(200).end();
-    return;
-  }
+//   if (req.method === 'OPTIONS') {
+//     res.status(200).end();
+//     return;
+//   }
 
-  res.status(200).json({ message: 'CORS configured dynamically!' });
-}
+//   res.status(200).json({ message: 'CORS configured dynamically!' });
+// }
 
 
 // middleware
-app.use(handler)
+// app.use(handler)
 app.use(cors(allowedDomains));
 app.use(express.json());
 app.use(morgan('dev'));
