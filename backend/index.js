@@ -27,8 +27,7 @@ const allowedDomains = process.env.ALLOWED_DOMAINS.split(',');
 
 // console.log(allowedDomains)
 
-export default function handler(req, res) {
-  const allowedOrigins = process.env.ALLOWED_ORIGINS.split(',');
+const handler =(req, res) => {
 
   const origin = req.headers.origin;
   if (allowedOrigins.includes(origin)) {
