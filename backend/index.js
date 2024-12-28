@@ -22,8 +22,11 @@ const adminRoutes = require("./routes/admin.routes");
 // const uploadRouter = require('./routes/uploadFile.route');
 const cloudinaryRoutes = require("./routes/cloudinary.routes");
 
+// Read allowed domains from the .env file
+const allowedDomains = process.env.ALLOWED_DOMAINS.split(',');
+
 // middleware
-app.use(cors());
+app.use(cors(allowedDomains));
 app.use(express.json());
 app.use(morgan('dev'));
 app.use(express.static(path.join(__dirname, 'public')));
@@ -44,7 +47,7 @@ app.use("/api/cloudinary", cloudinaryRoutes);
 app.use("/api/admin", adminRoutes);
 
 // root route
-app.get("/", (req, res) => res.send("Apps worked successfully"));
+app.get("/", (req, res) => res.send("Gal2"));
 
 app.listen(PORT, () => console.log(`server running on port ${PORT}`));
 
