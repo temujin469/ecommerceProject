@@ -4,7 +4,7 @@ import Footer from "@/layout/footers/footer";
 import ProfileArea from "@/components/my-account/profile-area";
 
 export const metadata = {
-  title: "Shofy - Profile Page",
+  title: "Профайл",
 };
 
 export default function ProfilePage() {
@@ -12,7 +12,7 @@ export default function ProfilePage() {
     <Wrapper>
       <HeaderTwo style_2={true} />
       <ProfileArea />
-      <Footer style_2={true} />
+      {/* <Footer style_2={true} /> */}
     </Wrapper>
   );
 }

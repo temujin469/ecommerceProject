@@ -31,22 +31,22 @@ const ProfileNavTab = () => {
         <SingleNav
           active={true}
           id="profile"
-          title="Profile"
+          title="Профайл"
           icon="fa-regular fa-user-pen"
         />
         <SingleNav
           id="information"
-          title="Information"
+          title="Мэдээлэл"
           icon="fa-regular fa-circle-info"
         />
         <SingleNav
           id="order"
-          title="My Orders"
+          title="Захиалга"
           icon="fa-light fa-clipboard-list-check"
         />
         <SingleNav
           id="password"
-          title="Change Password"
+          title="Нууц үгээ солих"
           icon="fa-regular fa-lock"
         />
       </div>

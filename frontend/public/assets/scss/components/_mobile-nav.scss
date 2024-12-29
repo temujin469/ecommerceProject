@@ -42,6 +42,9 @@
     height: 40px;
     width: 40px;
     border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     &.active {
       color:$white;
       background-color:$theme-primary;

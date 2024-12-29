@@ -5,14 +5,14 @@ import CommonBreadcrumb from "@/components/breadcrumb/common-breadcrumb";
 import LoginArea from "@/components/login-register/login-area";
 
 export const metadata = {
-  title: "Shofy - Login Page",
+  title: "Нэвтрэх",
 };
 
 export default function LoginPage() {
   return (
     <Wrapper>
       <HeaderTwo style_2={true} />
-      <CommonBreadcrumb title="Нэвтрэх" subtitle="Нэвтрэх" center={true} />
+      {/* <CommonBreadcrumb title="Нэвтрэх" subtitle="Нэвтрэх" center={true} /> */}
       <LoginArea/>
       {/* <Footer primary_style={true} /> */}
     </Wrapper>

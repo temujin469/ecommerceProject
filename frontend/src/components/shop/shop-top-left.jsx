@@ -40,7 +40,8 @@ const ShopTopLeft = ({total,showing=9}) => {
           </ul>
         </div>
         <div className="tp-shop-top-result">
-          <p>{total} илэрцээс {showing}-ыг харуулж байна</p>
+          {/* <p>{total} илэрцээс {showing}-ыг харуулж байна</p> */}
+          <p>{total} илэрц</p>
         </div>
       </div>
     </>

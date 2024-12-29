@@ -31,16 +31,16 @@ const ShopFilterOffCanvas = ({
         }`}
       >
         <div className="tp-filter-offcanvas-wrapper">
-          <div className="tp-filter-offcanvas-close">
+          {/* <div className="tp-filter-offcanvas-close">
             <button
               type="button"
               onClick={() => dispatch(handleFilterSidebarOpen())}
               className="tp-filter-offcanvas-close-btn filter-close-btn"
             >
               <i className="fa-solid fa-xmark"></i>
-              {" "}Close
+              {" "}
             </button>
-          </div>
+          </div> */}
           <div className="tp-shop-sidebar">
             {/* filter */}
             <PriceFilter

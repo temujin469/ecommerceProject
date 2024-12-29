@@ -21,13 +21,14 @@ const ShopTopRight = ({ selectHandleFilter }) => {
           defaultCurrent={0}
           onChange={selectHandleFilter}
           name="Default Sorting"
+          className="w-100"
         />
       </div>
       <div className="tp-shop-top-filter">
         <button
           onClick={() => dispatch(handleFilterSidebarOpen())}
           type="button"
-          className="tp-filter-btn"
+          className="tp-filter-btn w-100"
         >
           <span>
             <Filter />

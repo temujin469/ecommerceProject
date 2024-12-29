@@ -4,6 +4,7 @@ import ErrorMsg from "../common/error-msg";
 import { useGetShowCategoryQuery } from "@/redux/features/categoryApi";
 import { useRouter } from "next/navigation";
 import ShopCategoryLoader from "../loader/shop/shop-category-loader";
+import MobileNav from "../common/mobile-navbar";
 
 const ShopCategoryArea = () => {
   const { data: categories, isLoading, isError } = useGetShowCategoryQuery();
@@ -56,10 +57,11 @@ const ShopCategoryArea = () => {
   }
   return (
     <>
-      <section className="tp-category-area pb-120">
+      <section className="tp-category-area pb-65">
         <div className="container">
           <div className="row">{content}</div>
         </div>
+        <MobileNav/>
       </section>
     </>
   );

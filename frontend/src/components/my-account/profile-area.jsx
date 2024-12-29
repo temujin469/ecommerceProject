@@ -11,6 +11,7 @@ import Loader from "../loader/loader";
 import { useRouter } from "next/navigation";
 import ErrorMsg from "../common/error-msg";
 import Cookies from "js-cookie";
+import MobileNav from "../common/mobile-navbar";
 
 const ProfileArea = () => {
   const router = useRouter();
@@ -40,7 +41,7 @@ const ProfileArea = () => {
     </div>
   }
   if (!isLoading && !isError) {
-   content = <section className="profile__area pt-120 pb-120">
+   content = <section className="profile__area pt-20 pb-40">
       <div className="container">
         <div className="profile__inner p-relative">
           <ProfileShape />
@@ -99,6 +100,7 @@ const ProfileArea = () => {
   return (
     <>
       {content}
+      <MobileNav/>
     </>
   );
 };

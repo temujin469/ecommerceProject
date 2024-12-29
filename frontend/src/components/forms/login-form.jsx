@@ -1,16 +1,16 @@
-'use client';
-import React, { useState } from 'react';
+"use client";
+import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
-import { useRouter,redirect } from 'next/navigation';
-import Link from 'next/link';
+import { useRouter, redirect } from "next/navigation";
+import Link from "next/link";
 // internal
-import { CloseEye, OpenEye } from '@/svg';
-import ErrorMsg from '../common/error-msg';
-import { useLoginUserMutation } from '@/redux/features/auth/authApi';
-import { notifyError, notifySuccess } from '@/utils/toast';
-
+import { CloseEye, OpenEye } from "@/svg";
+import ErrorMsg from "../common/error-msg";
+import { useLoginUserMutation } from "@/redux/features/auth/authApi";
+import { notifyError, notifySuccess } from "@/utils/toast";
+import { useSelector } from "react-redux";
 
 // schema
 const schema = Yup.object().shape({
@@ -19,7 +19,8 @@ const schema = Yup.object().shape({
 });
 const LoginForm = () => {
   const [showPass, setShowPass] = useState(false);
-  const [loginUser, { }] = useLoginUserMutation();
+  const [loginUser, {}] = useLoginUserMutation();
+  const { user: userInfo } = useSelector((state) => state.auth);
   const router = useRouter();
   // react hook form
   const {
@@ -31,28 +32,42 @@ const LoginForm = () => {
     resolver: yupResolver(schema),
   });
   // onSubmit
+
   const onSubmit = (data) => {
     loginUser({
       email: data.email,
       password: data.password,
-    })
-      .then((data) => {
-        if (data?.data) {
-          notifySuccess("Login successfully");
-          router.push('/checkout' || "/");
-        }
-        else {
-          notifyError(data?.error?.data?.error)
-        }
-      })
+    }).then((data) => {
+      if (data?.data) {
+        console.log(data);
+        notifySuccess("Амжилттай нэвтэрлээ");
+        router.push("/profile");
+      } else {
+        notifyError(data?.error?.data?.error);
+      }
+    });
     reset();
   };
+
+  useEffect(() => {
+    if (userInfo?.name) {
+      router.push("/profile");
+    }
+    console.log(userInfo)
+  },[userInfo]);
+
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <div className="tp-login-input-wrapper">
         <div className="tp-login-input-box">
           <div className="tp-login-input">
-            <input {...register("email", { required: `Имэйл шаардлагатай!` })} name="email" id="email" type="email" placeholder="example@mail.com" />
+            <input
+              {...register("email", { required: `Имэйл шаардлагатай!` })}
+              name="email"
+              id="email"
+              type="email"
+              placeholder="example@mail.com"
+            />
           </div>
           <div className="tp-login-input-title">
             <label htmlFor="email">Таны имэйл</label>
@@ -78,7 +93,7 @@ const LoginForm = () => {
               <label htmlFor="password">Нууц үг</label>
             </div>
           </div>
-          <ErrorMsg msg={errors.password?.message}/>
+          <ErrorMsg msg={errors.password?.message} />
         </div>
       </div>
       <div className="tp-login-suggetions d-sm-flex align-items-center justify-content-between mb-20">
@@ -91,7 +106,9 @@ const LoginForm = () => {
         </div>
       </div>
       <div className="tp-login-bottom">
-        <button type='submit' className="tp-login-btn w-100">Нэвтрэх</button>
+        <button type="submit" className="tp-login-btn w-100">
+          Нэвтрэх
+        </button>
       </div>
     </form>
   );

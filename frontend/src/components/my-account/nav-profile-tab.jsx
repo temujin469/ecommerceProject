@@ -21,14 +21,14 @@ const NavProfileTab = ({ orderData }) => {
           <div className="col-md-6">
             <div className="profile__main-inner d-flex flex-wrap align-items-center">
               <div className="profile__main-content">
-                <h4 className="profile__main-title">Welcome Mr. {user?.name}</h4>
+                <h4 className="profile__main-title">Тавтай морил {user?.name}</h4>
               </div>
             </div>
           </div>
           <div className="col-md-6">
             <div className="profile__main-logout text-sm-end">
               <a onClick={handleLogout} className="cursor-pointer tp-logout-btn">
-                Logout
+                Гарах
               </a>
             </div>
           </div>
@@ -44,7 +44,8 @@ const NavProfileTab = ({ orderData }) => {
                   <Box />
                 </span>
               </div>
-              <h4 className="profile__main-info-title">Total Order</h4>
+              <h4 className="profile__main-info-title">
+              Нийт захиалга</h4>
             </div>
           </div>
           <div className="col-md-3 col-sm-6">
@@ -55,7 +56,7 @@ const NavProfileTab = ({ orderData }) => {
                   <Processing />
                 </span>
               </div>
-              <h4 className="profile__main-info-title">Pending Order</h4>
+              <h4 className="profile__main-info-title">Хүлээгдэж буй</h4>
             </div>
           </div>
           <div className="col-md-3 col-sm-6">
@@ -68,7 +69,7 @@ const NavProfileTab = ({ orderData }) => {
                   <Truck />
                 </span>
               </div>
-              <h4 className="profile__main-info-title">Processing Order</h4>
+              <h4 className="profile__main-info-title">Хүргэлтэнд гарсан</h4>
             </div>
           </div>
           <div className="col-md-3 col-sm-6">
@@ -81,7 +82,7 @@ const NavProfileTab = ({ orderData }) => {
                   <DeliveryTwo />
                 </span>
               </div>
-              <h4 className="profile__main-info-title">Complete Order</h4>
+              <h4 className="profile__main-info-title">Захиалгаас гарсан</h4>
             </div>
           </div>
         </div>

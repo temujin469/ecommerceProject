@@ -32,7 +32,7 @@ const ShopContent = ({all_products,products,otherProps,shop_right,hidden_sidebar
   }, 0);
   return (
     <>
-     <section className="tp-shop-area pb-120">
+     <section className="tp-shop-area pb-80">
         <div className="container">
           <div className="row">
             {!shop_right && !hidden_sidebar && (
@@ -129,7 +129,7 @@ const ShopContent = ({all_products,products,otherProps,shop_right,hidden_sidebar
                 )}
                 {products.length > 0 && (
                   <div className="tp-shop-pagination mt-20">
-                    <div className="tp-pagination">
+                    <div className="tp-pagination d-flex justify-content-center">
                       <Pagination
                         items={products}
                         countOfPage={12}

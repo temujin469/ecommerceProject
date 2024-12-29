@@ -6,6 +6,13 @@
 
 .#{$theme-prifix}-product-details {
   $self: &;
+  // &-area {
+  //   @media #{$xs} {
+  //     display: none;
+  //   }
+
+
+  // }
   &-wrapper {
     margin-left: 21px;
     &.has-sticky {

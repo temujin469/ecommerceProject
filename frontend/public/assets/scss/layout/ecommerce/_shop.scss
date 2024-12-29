@@ -20,7 +20,7 @@
             float: none;
 
             @media #{$xs}{
-                max-width: 280px;
+                max-width: 100%;
             }
             &::after{
                 right: 20px;

@@ -5,7 +5,7 @@ import ShopBreadcrumb from "@/components/breadcrumb/shop-breadcrumb";
 import ShopCategoryArea from "@/components/categories/shop-category-area";
 
 export const metadata = {
-  title: "Shofy - Category Page",
+  title: "Ангилалууд",
 };
 
 export default function CategoryPage() {
@@ -14,7 +14,7 @@ export default function CategoryPage() {
       <HeaderTwo style_2={true} />
       <ShopBreadcrumb title="Ангилалууд" subtitle="Ангилалууд" />
       <ShopCategoryArea />
-      <Footer primary_style={true} />
+      {/* <Footer primary_style={true} /> */}
     </Wrapper>
   );
 }

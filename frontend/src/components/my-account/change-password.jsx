@@ -56,7 +56,7 @@ const ChangePassword = () => {
     reset();
   };
   return (
-    <div className="profile__password">
+    <div className="profile__password pb-50">
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="row">
           {!user?.googleSignIn && (
@@ -73,7 +73,8 @@ const ChangePassword = () => {
                   />
                 </div>
                 <div className="tp-profile-input-title">
-                  <label htmlFor="password">Old Password</label>
+                  <label htmlFor="password">
+                  Хуучин нууц үг</label>
                 </div>
                 <ErrorMsg msg={errors.password?.message} />
               </div>
@@ -92,7 +93,7 @@ const ChangePassword = () => {
                 />
               </div>
               <div className="tp-profile-input-title">
-                <label htmlFor="new_pass">New Password</label>
+                <label htmlFor="new_pass">Шинэ нууц үг</label>
               </div>
               <ErrorMsg msg={errors.newPassword?.message} />
             </div>
@@ -108,15 +109,15 @@ const ChangePassword = () => {
                 />
               </div>
               <div className="tp-profile-input-title">
-                <label htmlFor="confirmPassword">Confirm Password</label>
+                <label htmlFor="confirmPassword">Баталгаажуулах</label>
               </div>
               <ErrorMsg msg={errors.confirmPassword?.message} />
             </div>
           </div>
           <div className="col-xxl-6 col-md-6">
             <div className="profile__btn">
-              <button type="submit" className="tp-btn">
-                Update
+              <button type="submit" className="tp-btn w-100">
+                Шинэчлэх
               </button>
             </div>
           </div>

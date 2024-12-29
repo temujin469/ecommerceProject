@@ -17,7 +17,7 @@ const MyOrders = ({ orderData }) => {
                 style={{ fontSize: "30px" }}
                 className="fa-solid fa-cart-circle-xmark"
               ></i>
-              <p>You Have no order Yet!</p>
+              <p>Танд одоохондоо захиалга алга!</p>
             </div>
           </div>
         ))}
@@ -25,10 +25,10 @@ const MyOrders = ({ orderData }) => {
         <table className="table">
           <thead>
             <tr>
-              <th scope="col">Order Id</th>
-              <th scope="col">Order Time</th>
-              <th scope="col">Status</th>
-              <th scope="col">View</th>
+              <th scope="col">Дугаар</th>
+              <th scope="col">Огноо</th>
+              <th scope="col">Төлөв</th>
+              <th scope="col">Харах</th>
             </tr>
           </thead>
           <tbody>
@@ -46,7 +46,7 @@ const MyOrders = ({ orderData }) => {
                 </td>
                 <td>
                   <Link href={`/order/${item._id}`} className="tp-logout-btn">
-                    Invoice
+                  Нэхэмжлэл
                   </Link>
                 </td>
               </tr>

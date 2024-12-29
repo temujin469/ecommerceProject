@@ -1,5 +1,5 @@
 import './globals.scss';
-import {Jost, Roboto,Charm,Oregano} from 'next/font/google';
+import {Rubik,Nunito} from 'next/font/google';
 import Providers from '@/components/provider';
 
 export const metadata = {
@@ -7,37 +7,37 @@ export const metadata = {
   description: 'Онлайн худалдааны вэб сайт',
 }
 
-const body = Jost({
-  weight: ["300","400", "500", "600", "700", "800","900"],
+const body = Rubik({
+  weight: ["300","400", "500", "600", "700","800","900"],
   subsets: ["latin"],
   variable: "--tp-ff-body",
 });
-const heading = Jost({
-  weight: ["300","400", "500", "600", "700", "800","900"],
+const heading = Rubik({
+  weight: ["300","400", "500", "600", "700","800","900"],
   subsets: ["latin"],
   variable: "--tp-ff-heading",
 });
-const p = Jost({
-  weight: ["300","400", "500", "600", "700", "800","900"],
+const p = Nunito({
+  weight: ["300","400", "500", "600", "700"],
   subsets: ["latin"],
   variable: "--tp-ff-p",
 });
-const jost = Jost({
-  weight: ["300","400", "500", "600", "700", "800","900"],
+const jost = Nunito({
+  weight: ["300","400", "500", "600", "700"],
   subsets: ["latin"],
   variable: "--tp-ff-jost",
 });
-const roboto = Roboto({
-  weight: ["300","400","500","700","900"],
+const roboto = Nunito({
+  weight: ["300","400","500","700"],
   subsets: ["latin"],
   variable: "--tp-ff-roboto",
 });
-const oregano = Oregano({
+const oregano = Nunito({
   weight: ["400"],
   subsets: ["latin"],
   variable: "--tp-ff-oregano",
 });
-const charm = Charm({
+const charm = Nunito({
   weight: ["400", "700"],
   subsets: ["latin"],
   variable: "--tp-ff-charm",

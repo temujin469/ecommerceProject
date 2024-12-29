@@ -47,14 +47,14 @@ const ProfileInfo = () => {
   };
   return (
     <div className="profile__info">
-      <h3 className="profile__info-title">Personal Details</h3>
+      <h3 className="profile__info-title">Хувийн мэдээлэл</h3>
       <div className="profile__info-content">
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="row">
             <div className="col-xxl-6 col-md-6">
               <div className="profile__input-box">
                 <div className="profile__input">
-                  <input {...register("name", { required: `Name is required!` })} name='name' type="text" placeholder="Enter your username" defaultValue={user?.name} />
+                  <input {...register("name", { required: `Name is required!` })} name='name' type="text" placeholder="Хэрэглэгчийн нэрээ оруулна уу" defaultValue={user?.name} />
                   <span>
                     <UserThree/>
                   </span>
@@ -66,7 +66,7 @@ const ProfileInfo = () => {
             <div className="col-xxl-6 col-md-6">
               <div className="profile__input-box">
                 <div className="profile__input">
-                  <input {...register("email", { required: `Email is required!` })} name='email' type="email" placeholder="Enter your email" defaultValue={user?.email} />
+                  <input {...register("email", { required: `Email is required!` })} name='email' type="email" placeholder="Имэйлээ оруулна уу" defaultValue={user?.email} />
                   <span>
                     <EmailTwo/>
                   </span>
@@ -78,7 +78,7 @@ const ProfileInfo = () => {
             <div className="col-xxl-12">
               <div className="profile__input-box">
                 <div className="profile__input">
-                  <input {...register("phone", { required: true })} name='phone' type="text" placeholder="Enter your number" defaultValue="0123 456 7889" />
+                  <input {...register("phone", { required: true })} name='phone' type="text" placeholder="Дугаараа оруулна уу" />
                   <span>
                     <PhoneThree/>
                   </span>
@@ -90,7 +90,7 @@ const ProfileInfo = () => {
             <div className="col-xxl-12">
               <div className="profile__input-box">
                 <div className="profile__input">
-                  <input {...register("address", { required: true })} name='address' type="text" placeholder="Enter your address" defaultValue="3304 Randall Drive" />
+                  <input {...register("address", { required: true })} name='address' type="text" placeholder="Хаягаа оруулна уу" />
                   <span>
                     <LocationTwo/>
                   </span>
@@ -102,14 +102,14 @@ const ProfileInfo = () => {
             <div className="col-xxl-12">
               <div className="profile__input-box">
                 <div className="profile__input">
-                  <textarea {...register("bio", { required: true })} name='bio' placeholder="Enter your bio" defaultValue="Hi there, this is my bio..." />
+                  <textarea {...register("bio", { required: true })} name='bio' placeholder="Өөрийн намтрыг оруулна уу" />
                   <ErrorMsg msg={errors.bio?.message} />
                 </div>
               </div>
             </div>
             <div className="col-xxl-12">
               <div className="profile__btn">
-                <button type="submit" className="tp-btn">Update Profile</button>
+                <button type="submit" className="tp-btn w-100">Шинэчлэх </button>
               </div>
             </div>
           </div>

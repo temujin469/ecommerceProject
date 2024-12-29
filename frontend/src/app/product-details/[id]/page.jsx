@@ -12,6 +12,7 @@ export default function ProductDetailsPage({ params }) {
     <Wrapper>
       <HeaderTwo style_2={true} />
       <ProductDetailsArea id={params.id} />
+      {/* <ProductDetailsArea id={params.id} /> */}
       <Footer primary_style={true} />
     </Wrapper>
   );
